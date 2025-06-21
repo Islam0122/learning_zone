@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Список машин</title>
+    <style type="text/css">
+        body{
+            background: #000;
+        }
+    </style>
 </head>
 <body>
-  <h1> hello world bro</h1>
+    <h1>Список машин</h1>
+    {% for car in cars %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <h2>{{ car.name }}</h2>
+            <img src="{{ car.image.url }}" alt="{{ car.name }}" style="width: 300px;">
+            <p><strong>Цена:</strong> {{ car.price }} сом</p>
+            <p><strong>Описание:</strong> {{ car.description }}</p>
+            <p><strong>Год выпуска:</strong> {{ car.year_built }}</p>
+            <p><strong>Цвет:</strong> {{ car.color }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
